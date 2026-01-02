@@ -1,3 +1,3 @@
 fn main() {
-    println!("Hello, world!");
+    println!("=> Hello!\n=> run: `cargo test`, to run each aoc2025 challenge as rust tests!");
 }
