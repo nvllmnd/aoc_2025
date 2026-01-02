@@ -1,4 +1,6 @@
 mod test {
+    const INPUT: &str = include_str!("../../inputs/day10.txt");
+    const INPUT_BYTES: &[u8] = INPUT.as_bytes();
 
     #[test]
     fn day_solution() {
