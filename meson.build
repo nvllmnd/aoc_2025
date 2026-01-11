@@ -81,7 +81,7 @@ aoc_dep = declare_dependency(
 aoc_exe = executable(
   'aoc',
   files('src/main.c'),
-  dependencies: [aoc_dep ],
+  dependencies: [aoc_dep],
   include_directories: inc,
   install: true,
   c_pch: 'pch/aoc_pch.h',

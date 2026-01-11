@@ -4,8 +4,13 @@ project_name_full := "{{project_name}}"
 build_root := "./bin"
 
 # Build directories
+bin_name := "aoc"
 debug_dir := build_root + "/debug"
+debug_bin := debug_dir + bin_name
+
 release_dir := build_root + "/release" 
+release_bin := release_dir + bin_name
+
 
 # Compiler selection
 compiler := "clang"
@@ -27,7 +32,7 @@ default:
 	just --list
 
 
-# Prints Radium version
+# Prints version
 version:
 	echo "{{version}}"
 
@@ -78,17 +83,6 @@ alias sr := setup-release
 alias cfgd := reconfig-debug
 alias cfg := reconfig-release
 
-#Run Radium (debug ) executable"
-radium-debug: build-debug
-	"{{debug_dir}}/rad"
-
-#Run optimized (build-release) radium executable "
-radium: build-release
-	"{{release_dir}}/rad"
-
-# Aliases for debug run targets
-alias dradium := radium-debug
-
 test: build-debug
 	meson test -C "{{debug_dir}}"
 
@@ -114,21 +108,20 @@ install: build-release
 dev-setup:
 	bash dev/setup.sh
 
-radium-debug-repl:
-	"{{debug_dir}}/rad" repl
+aoc-debug:
+	"{{debug_dir}}/aoc" 
 
-radium-repl:
-	"{{release_dir}}/rad" repl
+aoc:
+	"{{release_dir}}/aoc" 
 
 
 alias rd := rebuild
 alias r := rebuild-release
 
 alias build := build-debug
-alias run := radium-debug
-alias run-repl := radium-debug-repl
-alias run-release := radium
-alias run-release-repl := radium-repl
+alias run := aoc-debug 
+alias run-repl := aoc-debug
+alias run-release := aoc 
 
 
 
