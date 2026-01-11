@@ -22,8 +22,8 @@ const PRACTICE_DIAL_START: i32 = 50;
 struct Dial(i32);
 
 impl Dial {
-    pub const MIN: i32 = 0;
-    pub const MAX: i32 = 99;
+    pub const MIN: i32 = 1;
+    pub const MAX: i32 = 100;
 
     pub const START: i32 = 50;
 
@@ -83,7 +83,7 @@ fn tick_right(dial: Dial, n: i32) -> Dial {
     if next > Dial::MAX {
         let next = next - Dial::MAX;
         println!(
-            "Ticking dial Right =>from: {} to {}, by {}",RA
+            "Ticking dial Right =>from: {} to {}, by {}",
             curr, next, rem
         );
         return Dial(next);
