@@ -87,6 +87,14 @@ aoc_exe = executable(
   c_pch: 'pch/aoc_pch.h',
 )
 
+aoc_d1_exe = executable(
+  'd1',
+  files('src/days/d1.c'),
+  dependencies: [aoc_dep],
+  include_directories: inc,
+  install: true,
+  c_pch: 'pch/aoc_pch.h',
+)
 
 subdir('tests')
 
