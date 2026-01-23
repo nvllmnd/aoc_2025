@@ -26,11 +26,12 @@ int main(int argc, char** argv) {
   (void)argv;
   (void)INPUT;
 
-  const char* iter = "A\nB\n";
-  do {
+  const char* iter = "A\nB\nC\n";
+
+  while (iter) {
     iter = parse_next(iter, SEPS);
     printf("%s", iter);
-  } while (iter);
+  }
 
   puts("day1 solution");
   return 0;
